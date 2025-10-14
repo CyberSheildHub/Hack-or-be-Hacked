@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# ⚔️ Hack or Be Hacked  
+### *CyberShield Hub’s Official Cyber Warfare Simulation Platform*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Hack or Be Hacked Banner](https://raw.githubusercontent.com/CyberSheildHub/Hack-or-be-Hacked/main/public/linux.png)
 
-Currently, two official plugins are available:
+## 🧠 Overview  
+**Hack or Be Hacked** is a next-generation **CTF simulation platform** developed by **CyberShield Hub**, designed to let users experience the real pulse of cyber warfare.  
+From phishing to ransomware defense, every mission is an interactive battle where players learn, defend, and adapt like true threat analysts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the **frontend** for the platform — built with modern web technologies for performance, responsiveness, and real-time interaction.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
+- 🎮 **Interactive CTF Scenarios** — Simulate attacks, defenses, and incident responses.  
+- 🧩 **Real-Time Simulation Interface** — Smooth, dynamic environment with live scenario feedback.  
+- 🏆 **Global Leaderboard** — Compete and rank with others based on performance and speed.  
+- 🧱 **Modular Design** — Easily integrates with RedAI and RedScan frameworks.  
+- 💡 **Educational Focus** — Designed for red/blue teamers, ethical hackers, and cybersecurity learners.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧰 Tech Stack
+| Layer | Technology |
+|-------|-------------|
+| Frontend Framework | [React + TypeScript + Vite](https://vitejs.dev/) |
+| Styling | [TailwindCSS](https://tailwindcss.com/) |
+| Backend Integration | FastAPI / Node.js |
+| Hosting | Nginx on Linux |
+| CI/CD | GitHub Actions (Planned) |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 Project Setup
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+# Clone the repository
+git clone https://github.com/CyberSheildHub/Hack-or-be-Hacked.git
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Navigate into the project
+cd Hack-or-be-Hacked/hackorbehacked-frontend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Install dependencies
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Run in development mode
+npm run dev
+
+# Build for production
+npm run build
+
