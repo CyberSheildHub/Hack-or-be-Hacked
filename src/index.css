@@ -1,0 +1,149 @@
+:root {
+  --bg: #0b0f12;
+  --panel: #0f1518;
+  --accent: #00c7b7;
+  --muted: #9aa4a6;
+  --card: #0f1a1c;
+}
+
+/* Reset + base */
+* { box-sizing: border-box; }
+html,body,#root {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: var(--bg);
+  color: #e6eef0;
+  font-size: 14px; /* 🔥 compact base size */
+  line-height: 1.4;
+}
+
+/* Header */
+.site-header {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 20px; /* reduced */
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  background:linear-gradient(90deg,#071018, #07131a);
+}
+.logo-small { height:36px; width:auto; border-radius:6px; box-shadow: 0 4px 12px rgba(0,0,0,.5); }
+.site-header h1 { margin:0; font-size:16px; font-weight:700; color:#bfeee8; }
+
+/* Layout */
+.page { max-width:1100px; margin:20px auto; padding:0 14px; }
+
+/* Hero section */
+.hero { display:flex; gap:20px; align-items:center; }
+.hero-image { max-width:320px; border-radius:10px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+.hero-copy { flex:1; }
+.hero-copy h2 { margin:0 0 4px 0; font-size:20px; color:#aeeee6; } /* smaller */
+.hero-copy p { margin:0 0 10px 0; color:var(--muted); max-width:480px; font-size:14px; }
+
+/* Buttons */
+.btn {
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:8px;
+  background:linear-gradient(90deg,var(--accent),#00a89b);
+  color:#022a28;
+  font-weight:600;
+  text-decoration:none;
+  margin-right:6px;
+  font-size:13px;
+}
+.btn.secondary {
+  background:transparent;
+  color:var(--accent);
+  border:1px solid rgba(0,255,200,0.06);
+}
+.btn.ghost {
+  background:transparent;
+  border:1px solid #38bdf8;
+  color:#38bdf8;
+}
+
+/* Features/cards */
+.features { display:flex; gap:12px; margin-top:20px; }
+.card {
+  flex:1;
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.03);
+  text-align:center;
+  font-size:13px;
+}
+.small-thumb { width:100px; border-radius:6px; margin-top:6px; }
+
+/* Selector */
+.selector .grid { display:flex; gap:10px; margin-top:10px; }
+.scenario {
+  cursor:pointer; flex:1;
+  padding:8px;
+  border-radius:8px;
+  background:var(--panel);
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.02);
+  font-size:13px;
+}
+.scenario.selected { outline:2px solid rgba(0,200,170,0.18); transform:translateY(-3px); }
+
+/* Simulation */
+.simulation .sim-top { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.sim-config { display:flex; gap:8px; align-items:center; font-size:13px; }
+.sim-body { display:flex; gap:14px; margin-top:14px; }
+.sim-preview { flex:2; background:var(--panel); padding:10px; border-radius:8px; }
+.sim-preview img { width:100%; border-radius:6px; max-height:280px; object-fit:cover; }
+.sim-actions { display:flex; gap:6px; margin-top:6px; }
+
+/* Log */
+.sim-log {
+  width:320px;
+  background:#071217;
+  border-radius:8px;
+  padding:10px;
+  color:var(--muted);
+  display:flex;
+  flex-direction:column;
+  font-size:12px;
+}
+.sim-log h4 { margin:0 0 6px 0; color:#bfeee8; font-size:13px; }
+.sim-log .log-list { flex:1; overflow-y:auto; max-height:400px; }
+.log-item { padding:6px; border-bottom:1px dashed rgba(255,255,255,0.02); font-size:12px; color:#d6e8e6; }
+
+/* Footer */
+.site-footer { text-align:center; padding:14px 0; color:var(--muted); margin-top:30px; border-top:1px solid rgba(255,255,255,0.02); font-size:12px; }
+
+/* WelcomeFlow */
+.welcome-flow { color:#e2e8f0; padding:1rem; }
+.welcome-flow h2 { font-size:1.2rem; margin-bottom:0.5rem; }
+.ai-welcome { background:#1a202c; padding:0.75rem; border-radius:6px; margin-bottom:0.75rem; }
+.ai-prompt { font-weight:500; margin:0.5rem 0; font-size:13px; }
+.choices button { margin-right:0.5rem; }
+
+/* Grid */
+.grid.scenarios {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+  gap:0.75rem;
+  margin:0.75rem 0;
+}
+.scenario-card {
+  background:#2d3748;
+  padding:0.75rem;
+  border-radius:6px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.2s;
+  font-size:13px;
+}
+.scenario-card.selected { border:2px solid #38bdf8; background:#1e293b; }
+.scenario-card img { max-width:100%; border-radius:4px; margin-bottom:0.25rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sim-body { flex-direction:column; }
+  .sim-log { width:100%; margin-top:10px; }
+}
+
